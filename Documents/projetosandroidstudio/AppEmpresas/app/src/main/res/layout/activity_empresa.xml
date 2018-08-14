@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:fitsSystemWindows="true">
+
+    <com.master.glideimageview.GlideImageView
+        android:id="@+id/image_empresa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="18dp"
+        android:background="@mipmap/img_e_1" />
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image_empresa"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/image_empresa"
+        android:text="teste"
+        android:textColor="#1a0e49"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textNegocio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textNome"
+        android:layout_below="@+id/textNome"
+        android:layout_marginTop="12dp"
+        android:text="teste"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textPais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textNegocio"
+        android:layout_below="@+id/textNegocio"
+        android:text="teste"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textInforme"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignStart="@+id/image_empresa"
+        android:layout_below="@+id/image_empresa"
+        android:layout_marginStart="9dp"
+        android:text="teste" />
+
+    <TextView
+        android:id="@+id/recuperarUrl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignStart="@+id/image_empresa"
+        android:layout_below="@+id/image_empresa"
+        android:layout_marginTop="15dp"
+        android:text="teste" />
+
+</RelativeLayout>

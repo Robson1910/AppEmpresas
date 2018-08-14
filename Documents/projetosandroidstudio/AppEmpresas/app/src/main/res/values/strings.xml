@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppEmpresas</string>
+    <string name="minimum_password">senha curta</string>
+    <string name="auth_failed">Conta nao existe</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "959997416714",
+    "firebase_url": "https://appempresas-45b6b.firebaseio.com",
+    "project_id": "appempresas-45b6b",
+    "storage_bucket": "appempresas-45b6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959997416714:android:1b5f130ebdffb3c6",
+        "android_client_info": {
+          "package_name": "com.example.appempresas.appempresas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959997416714-n0le00f14tog2dt7njr0mccfgguo6a2t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appempresas.appempresas",
+            "certificate_hash": "72b60f961e60df948bdb403520d6a9015d165987"
+          }
+        },
+        {
+          "client_id": "959997416714-9hrn9te3kntmkbstlj6sdlmrj0u1t65u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9Y35LmAZVF0Rwnk8eo0L_2Adh3fh6jMc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959997416714-9hrn9te3kntmkbstlj6sdlmrj0u1t65u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
