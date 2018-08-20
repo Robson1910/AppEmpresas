@@ -50,8 +50,14 @@ public class Main3Activity extends AppCompatActivity {
 
                     String empresaNome = empresaApp.getNome().toLowerCase();
                     String empresaPesquisa = empre.toString().toLowerCase();
+                    String empresaNome2 = empresaApp.getPais().toLowerCase();
+                    // retorna pelo nome da empresa
+                    if (empresaNome.contains(empresaPesquisa)) {
+                        Empresa.add(empresaApp);
 
-                    if (empresaPesquisa.contains(empresaNome)) {
+                    }
+                    // retorna pelo pais
+                    else if(empresaNome2.contains(empresaPesquisa)) {
                         Empresa.add(empresaApp);
                     }
                 }
