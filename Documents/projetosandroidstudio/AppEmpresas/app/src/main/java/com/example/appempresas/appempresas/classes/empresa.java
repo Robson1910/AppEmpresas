@@ -1,4 +1,4 @@
-package com.example.appempresas.appempresas;
+package com.example.appempresas.appempresas.classes;
 
 /**
  * Created by ROBSON on 13/08/2018.

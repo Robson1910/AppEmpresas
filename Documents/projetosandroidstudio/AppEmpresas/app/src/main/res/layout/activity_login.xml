@@ -17,7 +17,7 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="41.7dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
             app:srcCompat="@mipmap/logo_home"
             />
@@ -25,7 +25,7 @@
             android:id="@+id/textView"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32.3dp"
+            android:layout_marginTop="3dp"
             android:fontFamily="sans-serif"
             android:lines="2"
             android:layout_gravity="center"
@@ -36,25 +36,13 @@
             android:textStyle="bold"
             />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="300dp"
-            android:layout_marginTop="11dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif"
-            android:gravity="center_horizontal"
-            android:text="Lorem ipsum dolor sit amet, contetur adipiscing elit. Nunc accumsan."
-            android:textColor="#36454f"
-            android:textSize="18sp"
-            android:textStyle="normal"
-            />
+
 
         <EditText
             android:id="@+id/inputEmail"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="54.3dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:drawableLeft="@drawable/icone"
             android:ems="10"
@@ -65,7 +53,7 @@
         <EditText
             android:id="@+id/inputPassword"
             android:layout_width="300dp"
-            android:layout_marginTop="32.3dp"
+            android:layout_marginTop="15dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:drawableLeft="@drawable/iconef"
@@ -82,6 +70,42 @@
             android:layout_gravity="center"
             android:layout_marginTop="22.3dp"
             android:text="Entrar"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/emailCreate"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="#57bbbc"
+            android:layout_gravity="center"
+            android:layout_marginTop="22.3dp"
+            android:text="Cadastrar"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/EsqueceuSenha"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="#57bbbc"
+            android:layout_gravity="center"
+            android:layout_marginTop="22.3dp"
+            android:text="Recuperar Senha"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            />
+        <Button
+            android:id="@+id/btnPhone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="#57bbbc"
+            android:layout_gravity="center"
+            android:layout_marginTop="22.3dp"
+            android:text="Phone"
             android:textColor="@android:color/white"
             android:textSize="14sp"
             android:textStyle="bold"

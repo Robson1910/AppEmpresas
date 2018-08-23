@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.appempresas.appempresas.Email_Auth.Recuperar_senhaActivity">
+<LinearLayout
+    android:id="@+id/login_details"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:orientation="vertical"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:layout_constraintLeft_creator="1"
+    tools:layout_constraintRight_creator="1"
+    tools:layout_constraintTop_creator="1">
+
+    <TextView
+        android:id="@+id/text_view_email_n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Digite seu Email:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/recuperadorEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:inputType="textEmailAddress" />
+
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+    <TextView
+        android:id="@+id/text_view_email_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Assim que terminar você recebera um email para redefinir sua senha"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+    <Button
+        android:id="@+id/recuperarSenhaEmail"
+        style="?android:textAppearanceSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#303f9f"
+        android:padding="10dp"
+        android:text="Enviar"
+        android:textColor="?android:attr/colorBackground"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
+</android.support.constraint.ConstraintLayout>
+

@@ -1,4 +1,4 @@
-package com.example.appempresas.appempresas;
+package com.example.appempresas.appempresas.Menu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.appempresas.appempresas.R;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -30,6 +31,5 @@ public class Main2Activity extends AppCompatActivity {
         Glide.with(Main2Activity.this).load(im).into(img1);
         String inf = extra.getString("inf");
         info1.setText(inf);
-
     }
 }

@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.appempresas.appempresas.Email_Auth.Email_CreateActivity;
+import com.example.appempresas.appempresas.Email_Auth.Recuperar_senhaActivity;
+import com.example.appempresas.appempresas.Menu.MainActivity;
+import com.example.appempresas.appempresas.Phone_Auth.PhoneActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -18,18 +22,53 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText inputEmail1, inputPassword1;
     private FirebaseAuth auth;
-    private Button btnLogin1;
+    private Button btnLogin1, btnPhone,btnEmailCreate,recuperarSenha ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+        // mostra se usuario esta ainda logado mandando para o menu
+        auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
         setContentView(R.layout.activity_login);
 
         inputEmail1 = (EditText) findViewById(R.id.inputEmail);
         inputPassword1 = (EditText) findViewById(R.id.inputPassword);
         btnLogin1 = (Button) findViewById(R.id.btnLogin);
+        btnPhone = (Button) findViewById(R.id.btnPhone);
+        btnEmailCreate = (Button) findViewById(R.id.emailCreate);
+        recuperarSenha = (Button) findViewById(R.id.EsqueceuSenha);
 
+        btnPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, PhoneActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        recuperarSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, Recuperar_senhaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        btnEmailCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, Email_CreateActivity.class);
+                startActivity(intent);
+            }
+        });
         auth = FirebaseAuth.getInstance();
 
         btnLogin1.setOnClickListener(new View.OnClickListener() {

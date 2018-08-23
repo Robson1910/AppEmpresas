@@ -1,8 +1,10 @@
-package com.example.appempresas.appempresas;
+package com.example.appempresas.appempresas.Menu;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -13,6 +15,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appempresas.appempresas.classes.AdapterEmpresa;
+import com.example.appempresas.appempresas.classes.ConfiguracaoFirebase;
+import com.example.appempresas.appempresas.LoginActivity;
+import com.example.appempresas.appempresas.R;
+import com.example.appempresas.appempresas.classes.empresa;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,13 +33,15 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements GoogleApiClient.OnConnectionFailedListener {
     private ListView listView;
     private ArrayAdapter<empresa> teste;
     private ArrayList<empresa> Empresa;
     private DatabaseReference firebase;
     private ValueEventListener valueEventListenerProdutos;
-    private Button pesquisa;
+    private FirebaseAuth.AuthStateListener firebaseAuthListener;
+    private FirebaseAuth firebaseAuth;
+    private Button pesquisa,excluir,logout;
     private EditText text_empresa;
 
     @Override
@@ -40,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
         Empresa = new ArrayList<>();
         listView = (ListView) findViewById(R.id.ListaEmpresa);
         teste = new AdapterEmpresa(this, Empresa);
-        Button logout = (Button) findViewById(R.id.sair);
+        logout = (Button) findViewById(R.id.sair);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         pesquisa = (Button) findViewById(R.id.pesquisar);
+        excluir = (Button) findViewById(R.id.excluir);
         text_empresa = (EditText) findViewById(R.id.empresa_1);
         listView.setAdapter(teste);
 
@@ -98,10 +112,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
-
+            String email = user.getEmail();
+            System.out.println(email);
+            boolean emailVerified = user.isEmailVerified();
+            System.out.println(emailVerified);
         } else {
             goLoginScreen();
         }
@@ -113,19 +132,45 @@ public class MainActivity extends AppCompatActivity {
                 goLoginScreen();
             }
         });
+
+        excluir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserDelete();
+                FirebaseAuth.getInstance().signOut();
+                goLoginScreen();
+            }
+        });
+    }
+
+    private void UserDelete() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        user.delete()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                           System.out.println("User account deleted.");
+                        }
+                    }
+                });
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         firebase.removeEventListener(valueEventListenerProdutos);
+        if (firebaseAuthListener != null) {
+            firebaseAuth.removeAuthStateListener(firebaseAuthListener);
+        }
     }
 
     @Override
     protected void onStart() {
-        super.onStart();
-        firebase.addValueEventListener(valueEventListenerProdutos);
-    }
+       super.onStart();
+       firebase.addValueEventListener(valueEventListenerProdutos);
+   }
 
     private void goLoginScreen() {
         Intent intent = new Intent(this, LoginActivity.class);
@@ -133,4 +178,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
 }

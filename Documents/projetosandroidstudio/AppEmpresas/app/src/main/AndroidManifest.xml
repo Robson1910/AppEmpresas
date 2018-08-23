@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,12 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Main2Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Main3Activity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Menu.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Menu.Main2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Menu.Main3Activity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Phone_Auth.PhoneActivity" />
+        <activity android:name=".Email_Auth.Email_CreateActivity" />
+        <activity android:name=".Email_Auth.Recuperar_senhaActivity"></activity>
     </application>
 
 </manifest>

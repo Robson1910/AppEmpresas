@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ee4c77"
-    tools:context="com.example.appempresas.appempresas.Main2Activity">
+    tools:context="com.example.appempresas.appempresas.Menu.Main2Activity">
     <TextView
         android:id="@+id/text_text12"
         android:layout_width="wrap_content"

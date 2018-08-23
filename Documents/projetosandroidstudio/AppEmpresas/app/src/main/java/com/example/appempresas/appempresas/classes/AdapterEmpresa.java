@@ -1,4 +1,4 @@
-package com.example.appempresas.appempresas;
+package com.example.appempresas.appempresas.classes;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.appempresas.appempresas.R;
 import com.master.glideimageview.GlideImageView;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.appempresas.appempresas;
+package com.example.appempresas.appempresas.Menu;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.appempresas.appempresas.classes.AdapterEmpresa;
+import com.example.appempresas.appempresas.classes.ConfiguracaoFirebase;
+import com.example.appempresas.appempresas.R;
+import com.example.appempresas.appempresas.classes.empresa;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
